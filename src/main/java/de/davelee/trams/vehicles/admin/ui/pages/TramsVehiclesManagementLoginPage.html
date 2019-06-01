@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <!-- Define title and css file -->
+    <meta charset="UTF-8">
+    <title>TraMS Vehicles Management System</title>
+    <link rel="stylesheet" href="../css/loginpage.css"/>
+</head>
+<body>
+    <!-- Define header consisting of logo and title -->
+    <div id="header" class="header">
+        <p><img src="../images/trams-logo.png" width="83px" height="51px"/></p>
+        <h1><span wicket:id="title"></span></h1>
+    </div>
+    <!-- End Header -->
+
+    <!-- Begin Login Area -->
+    <div id="loginArea" class="loginArea">
+        <!-- Define the login form -->
+        <form wicket:id="loginForm">
+            <!-- Display any error messages to the user after submission at the top of the form -->
+            <div wicket:id="feedback"></div>
+            <table>
+                <tr>
+                    <!-- Operator label and drop-down box -->
+                    <td><p class="label"><label wicket:id="operatorLabel"></label></p></td>
+                    <td><p><select class="field" wicket:id="operatorSelect"></select></p></td>
+                </tr>
+                <tr>
+                    <!-- Username label and field -->
+                    <td><p class="label"><label wicket:id="usernameLabel"/></p></td>
+                    <td><p><input class="field" wicket:id="usernameField" id="usernameField" type="text"/></p></td>
+                </tr>
+                <tr>
+                    <!-- Password label and field -->
+                    <td><p class="label"><label wicket:id="passwordLabel"/></p></td>
+                    <td><p><input class="field" wicket:id="passwordField" id="passwordField" type="password"/></p></td>
+                </tr>
+            </table>
+            <!-- Submit button to login -->
+            <input type="submit" wicket:id="loginButton" class="loginButton" value="Login" />
+        </form>
+    </div>
+    <!-- End Login Area -->
+</body>
+</html>

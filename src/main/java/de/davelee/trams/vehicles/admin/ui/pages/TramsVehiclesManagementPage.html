@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <!-- Define title and css files -->
+    <meta charset="UTF-8">
+    <title>TraMS Vehicle Management Client - Administration Page</title>
+    <link rel="stylesheet" href="../css/managementpage.css"/>
+</head>
+<body>
+
+    <!-- Define header consisting of logo and title -->
+    <div id="header" class="header">
+        <p><img src="../images/trams-logo.png" width="83px" height="51px"/></p>
+        <h1><span wicket:id="title"></span></h1>
+    </div>
+
+    <h3><span style="float:right;"><span wicket:id="userOperator"/> (<a style="text-decoration: underline;" href="/logout">Logout</a>)</span></h3>
+    <!-- End Header -->
+
+    <h2></h2>
+
+    <!-- Show the area with all tabs available -->
+    <div wicket:id="mytabpanel">
+    </div>
+    <!-- End tabbed area -->
+
+</body>
+</html>

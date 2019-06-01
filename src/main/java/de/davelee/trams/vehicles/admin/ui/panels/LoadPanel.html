@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <!-- Title is not needed for panels -->
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<wicket:panel>
+    <hr/>
+    <h2>Import Company Fleet from JSON Format:</h2>
+    <!-- Display a form where a file can be submitted and an upload button -->
+    <form id="loadForm" method="post" wicket:id="loadForm">
+        <table>
+            <tr>
+                <td><h3 wicket:id="fileLabel">:</h3></td>
+                <td><input wicket:id="fileUploadField" size="40" type="file"/></td>
+            </tr>
+        </table>
+        <input type="submit" name="Load" value="Upload"/>
+    </form>
+    <!-- End panel -->
+</wicket:panel>
+</body>
+</html>

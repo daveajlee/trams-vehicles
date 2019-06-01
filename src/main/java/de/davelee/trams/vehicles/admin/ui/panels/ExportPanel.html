@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <!-- Title is not needed for panels -->
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<wicket:panel>
+    <hr/>
+    <h2>Export Company Fleet in JSON Format:</h2>
+    <!-- Display a text area containing the JSON and a download button to download it -->
+    <textarea wicket:id="exportArea" style="width: 100%; height: 50%"></textarea>
+    <form id="downloadForm" method="get" wicket:id="downloadForm">
+        <button wicket:id="downloadButton" ></button>
+    </form>
+    <!-- End panel -->
+</wicket:panel>
+</body>
+</html>

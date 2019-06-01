@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <!-- Title is not needed for panels -->
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<wicket:panel>
+    <hr/>
+    <!-- Display a form where the route number, timetable number and fleet number can be entered. -->
+    <form id="busAssignForm" method="get" wicket:id="busAssignForm">
+        <h2 wicket:id="headingLabel"></h2>
+        <table>
+            <tr>
+                <td><h3 wicket:id="routeNumberLabel">:</h3></td>
+                <td><input wicket:id="routeNumberField" type="text" id="routeNumberField"/></td>
+            </tr>
+            <tr>
+                <td><h3 wicket:id="timetableNumberLabel">:</h3></td>
+                <td><input wicket:id="timetableNumberField" type="text" id="timetableNumberField"/></td>
+            </tr>
+            <tr>
+                <td><h3 wicket:id="fleetNumberLabel">:</h3></td>
+                <td><input wicket:id="fleetNumberField" type="text" id="fleetNumberField"/></td>
+            </tr>
+        </table>
+        <!-- Submit button to save the allocation -->
+        <input type="submit" wicket:id="submitButton"/>
+    </form>
+</wicket:panel>
+</body>
+</html>

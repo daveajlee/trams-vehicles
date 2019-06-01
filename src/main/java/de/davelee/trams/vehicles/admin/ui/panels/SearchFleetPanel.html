@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+    <!-- Title is not needed for panels -->
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<wicket:panel>
+    <hr/>
+    <!-- Display a form with a text box to enter the fleet number and a search button-->
+    <form id="searchFleetForm" method="get" wicket:id="searchFleetForm">
+        <h2 wicket:id="headingLabel"></h2>
+        <table>
+            <tr>
+                <td><h3 wicket:id="fleetNumberLabel">:</h3></td>
+                <td><input wicket:id="fleetNumberField" type="text" id="fleetNumberField"/></td>
+            </tr>
+        </table>
+        <input type="submit" name="Search" value="Search"/>
+    </form>
+    <br/>
+    <!-- Display the result of the search -->
+    <div wicket:id="resultLabel">
+    </div>
+    <!-- End panel -->
+</wicket:panel>
+</body>
+</html>
