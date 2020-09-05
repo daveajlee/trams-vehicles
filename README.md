@@ -1,4 +1,7 @@
 # trams-vehicles
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fb36e26b4f0e47d6b578e5664082af0e)](https://app.codacy.com/manual/dave_33/trams-vehicles?utm_source=github.com&utm_medium=referral&utm_content=daveajlee/trams-vehicles&utm_campaign=Badge_Grade_Dashboard)
+
 This microservice for the TraMS platform stores vehicle information through REST and displays it to authorised individuals through a web client.
 
 ##How to use
