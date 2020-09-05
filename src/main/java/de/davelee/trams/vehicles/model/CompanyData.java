@@ -4,7 +4,6 @@ import de.davelee.trams.vehicles.api.BusResponse;
 import de.davelee.trams.vehicles.api.TrainResponse;
 import de.davelee.trams.vehicles.api.TramResponse;
 
-import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
 /**

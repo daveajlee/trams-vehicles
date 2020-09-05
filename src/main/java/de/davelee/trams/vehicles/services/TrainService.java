@@ -1,6 +1,9 @@
 package de.davelee.trams.vehicles.services;
 
-import de.davelee.trams.vehicles.data.*;
+import de.davelee.trams.vehicles.data.Train;
+import de.davelee.trams.vehicles.data.VehicleIdentifier;
+import de.davelee.trams.vehicles.data.VehicleStatus;
+import de.davelee.trams.vehicles.data.VehicleHistory;
 import de.davelee.trams.vehicles.repository.TrainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +27,7 @@ public class TrainService {
      * Add a train to the database.
      * @param train a <code>Train</code> object containing the train data to add to the database.
      */
-    public Train addTrain ( final Train train ) {
+    public Train addTrain (final Train train ) {
         return trainRepository.save(train);
     }
 

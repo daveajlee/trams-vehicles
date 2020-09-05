@@ -1,7 +1,13 @@
 package de.davelee.trams.vehicles;
 
 import com.jayway.restassured.RestAssured;
-import de.davelee.trams.vehicles.api.*;
+import de.davelee.trams.vehicles.api.BusRequest;
+import de.davelee.trams.vehicles.api.DeleteAssignRequest;
+import de.davelee.trams.vehicles.api.VehicleAssignRequest;
+import de.davelee.trams.vehicles.api.VehicleHoursRequest;
+import de.davelee.trams.vehicles.api.RetrieveVehicleRequest;
+import de.davelee.trams.vehicles.api.TramRequest;
+import de.davelee.trams.vehicles.api.TrainRequest;
 import org.apache.http.HttpStatus;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +21,7 @@ import java.time.LocalDate;
 import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes=TramsVehiclesServerApplication.class, webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -25,7 +32,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 public class TramsVehiclesServerApplicationTest {
 
     @LocalServerPort
-    int port;
+    private int port;
 
     @Before
     /**
@@ -41,10 +48,10 @@ public class TramsVehiclesServerApplicationTest {
      * Expected result: 200 status code OK.
      */
     public void testSwagger() {
-        when().
+        assertNotNull(when().
                 get("/swagger-ui.html").
                 then().
-                statusCode(HttpStatus.SC_OK);
+                statusCode(HttpStatus.SC_OK));
     }
 
     @Test
@@ -204,13 +211,13 @@ public class TramsVehiclesServerApplicationTest {
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .body("vehicleStatus", equalTo("Sold"));
-        given()
+        assertNotNull(given()
                 .contentType("application/json")
                 .body(busRequest)
                 .when()
                 .post("vehicle/purchaseBus")
                 .then()
-                .statusCode(HttpStatus.SC_CONFLICT);
+                .statusCode(HttpStatus.SC_CONFLICT));
     }
 
     @Test
@@ -329,13 +336,13 @@ public class TramsVehiclesServerApplicationTest {
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .body("vehicleStatus", equalTo("Sold"));
-        given()
+        assertNotNull(given()
                 .contentType("application/json")
                 .body(tramRequest)
                 .when()
                 .post("vehicle/purchaseTram")
                 .then()
-                .statusCode(HttpStatus.SC_CONFLICT);
+                .statusCode(HttpStatus.SC_CONFLICT));
     }
 
     @Test
@@ -465,13 +472,13 @@ public class TramsVehiclesServerApplicationTest {
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .body("vehicleStatus", equalTo("Sold"));
-        given()
+        assertNotNull(given()
                 .contentType("application/json")
                 .body(trainRequest)
                 .when()
                 .post("vehicle/purchaseTrain")
                 .then()
-                .statusCode(HttpStatus.SC_CONFLICT);
+                .statusCode(HttpStatus.SC_CONFLICT));
     }
 
     /**

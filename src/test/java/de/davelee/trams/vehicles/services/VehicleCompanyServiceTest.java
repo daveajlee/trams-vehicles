@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Test the <code>VehicleCompanyService</code> class.
@@ -32,7 +32,7 @@ public class VehicleCompanyServiceTest {
      * Expected result: no errors are thrown.
      */
     public void testSaveAndLoadCompany() {
-        vehicleCompanyService.exportCompany( "Sample Operator");
+        assertEquals("Sample Operator", vehicleCompanyService.exportCompany( "Sample Operator"));
     }
 
     @Test
@@ -56,6 +56,7 @@ public class VehicleCompanyServiceTest {
         List<BusResponse> busResponseList = new ArrayList<>();
         busResponseList.add(busResponse);
         companyData.setBusResponseList(busResponseList);
+        assertNotNull(companyData);
         vehicleCompanyService.loadCompanyData(companyData);
     }
 

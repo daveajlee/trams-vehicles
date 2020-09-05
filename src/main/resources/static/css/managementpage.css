@@ -14,7 +14,9 @@
 }
 
 #header h1 {
-    position:absolute; height:1em; margin-top:-5em
+    position:absolute;
+    height:1em;
+    margin-top:-5em
     font-family:sans-serif;
     font-size:20px;
 }

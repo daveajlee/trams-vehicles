@@ -1,6 +1,12 @@
 package de.davelee.trams.vehicles.data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;

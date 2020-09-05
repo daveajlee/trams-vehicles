@@ -11,15 +11,13 @@ import org.apache.wicket.model.Model;
  */
 public class SearchFleetPanel extends Panel {
 
-    private Model resultModel;
-
     /**
      * Create a new panel and add its components.
      * @param id a <code>String</code> with the matching ID element in HTML.
      */
     public SearchFleetPanel(final String id) {
         super(id);
-        resultModel = Model.of("");
+        Model resultModel = Model.of("");
         add(new SearchFleetForm("searchFleetForm", resultModel));
         add(new Label("resultLabel", resultModel));
     }

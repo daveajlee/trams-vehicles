@@ -5,16 +5,10 @@ import de.davelee.trams.vehicles.data.VehicleHistory;
 import de.davelee.trams.vehicles.data.VehicleIdentifier;
 import de.davelee.trams.vehicles.data.VehicleStatus;
 import de.davelee.trams.vehicles.repository.BusRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -24,8 +18,6 @@ import java.util.List;
  */
 @Service
 public class BusService {
-
-    private final static Logger logger = LoggerFactory.getLogger(BusService.class);
 
     @Autowired
     private BusRepository busRepository;
@@ -136,16 +128,6 @@ public class BusService {
     public void removeAllocation ( final Bus bus ) {
         bus.setAssignedRouteSchedule(null);
         busRepository.saveAndFlush(bus);
-    }
-
-    /**
-     * Convert date from string format: dd-MM-yyyy to localdate.
-     * @param dateStr a <code>String</code> containing the string to convert.
-     * @return a <code>LocalDate</code> object containing the converted date.
-     */
-    private LocalDate translateDateFromString ( final String dateStr ) {
-        String[] dateArray = dateStr.split("-");
-        return LocalDate.of(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]), Integer.parseInt(dateArray[0]));
     }
 
 

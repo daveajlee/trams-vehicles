@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Test the management page and ensure that it can be displayed successfully.
  * Use test wicket class to prevent Spring Security problems.
@@ -19,8 +21,6 @@ public class TramsVehiclesManagementPageTest {
 
     private WicketTester tester;
 
-    private ApplicationContextMock applicationContextMock;
-
     @Mock
     private VehicleCompanyService vehicleCompanyService;
 
@@ -28,10 +28,10 @@ public class TramsVehiclesManagementPageTest {
     /**
      * Setup the test by creating a new Wicket test application.
      */
-    public void setup ( ) {
+    public void setUp ( ) {
         MockitoAnnotations.initMocks(this);
         //Creates a new application context mock.
-        applicationContextMock = new ApplicationContextMock();
+        ApplicationContextMock applicationContextMock = new ApplicationContextMock();
         applicationContextMock.putBean("vehicleCompanyService", vehicleCompanyService);
 
         //Create a new wicket tester.
@@ -44,7 +44,8 @@ public class TramsVehiclesManagementPageTest {
      * Test case: Check that the page and that all tabs can be rendered successfully.
      * Expected result: all assertions are fulfilled.
      */
-    public void homepageRendersSuccessfully(){
+    public void testHomepageRendersSuccessfully(){
+        assertNotNull(tester);
         tester.getSession().setAttribute("operator", "Sample Operator");
         //start and render the test page
         tester.startPage(TramsVehiclesManagementPage.class);

@@ -1,7 +1,14 @@
 package de.davelee.trams.vehicles.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.davelee.trams.vehicles.api.*;
+import de.davelee.trams.vehicles.api.BusResponse;
+import de.davelee.trams.vehicles.api.TramResponse;
+import de.davelee.trams.vehicles.api.TrainResponse;
+import de.davelee.trams.vehicles.api.BusesResponse;
+import de.davelee.trams.vehicles.api.TramsResponse;
+import de.davelee.trams.vehicles.api.TrainsResponse;
+import de.davelee.trams.vehicles.api.DeleteAssignRequest;
+import de.davelee.trams.vehicles.api.VehicleAssignRequest;
 import de.davelee.trams.vehicles.model.CompanyData;
 import de.davelee.trams.vehicles.rest.controllers.VehicleOperationsRestController;
 import org.slf4j.Logger;

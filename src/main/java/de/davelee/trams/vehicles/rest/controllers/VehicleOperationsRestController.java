@@ -1,7 +1,30 @@
 package de.davelee.trams.vehicles.rest.controllers;
 
-import de.davelee.trams.vehicles.api.*;
-import de.davelee.trams.vehicles.data.*;
+import de.davelee.trams.vehicles.api.BusRequest;
+import de.davelee.trams.vehicles.api.TrainRequest;
+import de.davelee.trams.vehicles.api.TramRequest;
+import de.davelee.trams.vehicles.api.BusResponse;
+import de.davelee.trams.vehicles.api.TrainResponse;
+import de.davelee.trams.vehicles.api.TramResponse;
+import de.davelee.trams.vehicles.api.BusesResponse;
+import de.davelee.trams.vehicles.api.TrainsResponse;
+import de.davelee.trams.vehicles.api.TramsResponse;
+import de.davelee.trams.vehicles.api.VehicleResponse;
+import de.davelee.trams.vehicles.api.VehicleHoursRequest;
+import de.davelee.trams.vehicles.api.CheckVehicleHoursResponse;
+import de.davelee.trams.vehicles.api.RetrieveVehicleRequest;
+import de.davelee.trams.vehicles.api.CheckInspectionResponse;
+import de.davelee.trams.vehicles.api.VehicleAssignRequest;
+import de.davelee.trams.vehicles.api.DeleteAssignRequest;
+import de.davelee.trams.vehicles.api.VehicleRequest;
+import de.davelee.trams.vehicles.api.VehicleHistoryResponse;
+import de.davelee.trams.vehicles.data.Bus;
+import de.davelee.trams.vehicles.data.VehicleIdentifier;
+import de.davelee.trams.vehicles.data.VehicleStatus;
+import de.davelee.trams.vehicles.data.Tram;
+import de.davelee.trams.vehicles.data.Train;
+import de.davelee.trams.vehicles.data.VehicleHistory;
+import de.davelee.trams.vehicles.data.Vehicle;
 import de.davelee.trams.vehicles.services.BusService;
 import de.davelee.trams.vehicles.services.TrainService;
 import de.davelee.trams.vehicles.services.TramService;
@@ -13,7 +36,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -677,11 +705,8 @@ public class VehicleOperationsRestController {
             return false;
         } else if ( vehicleRequest.getCompany() == null ) {
             return false;
-        } else if ( vehicleRequest.getType() == null ) {
-            return false;
-        } else {
-            return true;
         }
+        return vehicleRequest.getType() != null;
     }
 
     /**

@@ -2,8 +2,12 @@ package de.davelee.trams.vehicles.admin.ui.pages;
 
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 import de.davelee.trams.vehicles.admin.ui.AdditionalFeatures;
-import de.davelee.trams.vehicles.admin.ui.panels.*;
-import de.davelee.trams.vehicles.services.VehicleCompanyService;
+import de.davelee.trams.vehicles.admin.ui.panels.SearchFleetPanel;
+import de.davelee.trams.vehicles.admin.ui.panels.VehicleAssignmentPanel;
+import de.davelee.trams.vehicles.admin.ui.panels.VehicleRemoveAssignmentPanel;
+import de.davelee.trams.vehicles.admin.ui.panels.DisplayFleetPanel;
+import de.davelee.trams.vehicles.admin.ui.panels.ExportPanel;
+import de.davelee.trams.vehicles.admin.ui.panels.LoadPanel;
 import org.apache.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
 import org.apache.wicket.extensions.ajax.markup.html.tabs.AjaxTabbedPanel;
 import org.apache.wicket.extensions.markup.html.tabs.AbstractTab;
@@ -12,7 +16,6 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +27,6 @@ import java.util.List;
 @WicketHomePage
 @AuthorizeInstantiation("USER")
 public class TramsVehiclesManagementPage extends WebPage {
-
-    @SpringBean
-    private VehicleCompanyService vehicleCompanyService;
 
     /**
      * Create the page content with a title, login display box and tabs.

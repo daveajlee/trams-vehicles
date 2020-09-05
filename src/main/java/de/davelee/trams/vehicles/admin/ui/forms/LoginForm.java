@@ -1,14 +1,16 @@
 package de.davelee.trams.vehicles.admin.ui.forms;
 
 import de.davelee.trams.vehicles.admin.ui.pages.TramsVehiclesManagementPage;
-import de.davelee.trams.vehicles.services.VehicleCompanyService;
 import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.*;
+import org.apache.wicket.markup.html.form.DropDownChoice;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.PasswordTextField;
+import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,9 +27,6 @@ public class LoginForm extends Form {
     private DropDownChoice<String> operatorSelect;
     private TextField<String> usernameField;
     private TextField<String> passwordField;
-
-    @SpringBean
-    private VehicleCompanyService vehicleCompanyService;
 
     /**
      * Create a new login form which can be embedded via the supplied wicket id.
