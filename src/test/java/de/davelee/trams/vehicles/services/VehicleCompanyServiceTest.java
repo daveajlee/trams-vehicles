@@ -32,7 +32,7 @@ public class VehicleCompanyServiceTest {
      * Expected result: no errors are thrown.
      */
     public void testSaveAndLoadCompany() {
-        assertEquals("Sample Operator", vehicleCompanyService.exportCompany( "Sample Operator"));
+        assertEquals("{\"companyName\":\"Sample Operator\",\"busResponseList\":[],\"tramResponseList\":[],\"trainResponseList\":[]}", vehicleCompanyService.exportCompany( "Sample Operator"));
     }
 
     @Test
